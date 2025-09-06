@@ -1,2 +1,2 @@
-# Gesti-nConjuntoResidencial
+# GestionConjuntoResidencial
 Trabajo grupal Web 
