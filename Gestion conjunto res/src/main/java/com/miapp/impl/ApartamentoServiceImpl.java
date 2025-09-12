@@ -1,4 +1,4 @@
-package com.miapp.service.impl;
+package com.miapp.impl;
 
 import com.miapp.dto.ApartamentoDTO;
 import com.miapp.entity.Apartamento;
