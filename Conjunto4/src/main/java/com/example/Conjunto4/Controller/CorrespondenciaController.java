@@ -1,7 +1,8 @@
-package com.example.Conjunto4.controller;
+package com.example.Conjunto4.Controller;
 
 import com.example.Conjunto4.DTO.CorrespondenciaDTO;
-import com.example.Conjunto4.service.CorrespondenciaService;
+import com.example.Conjunto4.Service.CorrespondenciaService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
