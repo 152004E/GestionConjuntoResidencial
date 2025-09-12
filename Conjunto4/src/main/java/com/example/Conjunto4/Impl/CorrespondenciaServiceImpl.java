@@ -1,11 +1,11 @@
-package com.example.Conjunto4.impl;
+package com.example.Conjunto4.Impl;
 
 import com.example.Conjunto4.DTO.CorrespondenciaDTO;
 import com.example.Conjunto4.Entity.Correspondencia;
 import com.example.Conjunto4.Entity.Apartamento;
-import com.example.Conjunto4.repository.CorrespondenciaRepository;
-import com.example.Conjunto4.repository.ApartamentoRepository;
-import com.example.Conjunto4.service.CorrespondenciaService;
+import com.example.Conjunto4.Repository.CorrespondenciaRepository;
+import com.example.Conjunto4.Repository.ApartamentoRepository;
+import com.example.Conjunto4.Service.CorrespondenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

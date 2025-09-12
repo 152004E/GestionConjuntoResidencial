@@ -1,4 +1,4 @@
-package com.example.Conjunto4.service;
+package com.example.Conjunto4.Service;
 
 import com.example.Conjunto4.DTO.VisitanteDTO;
 import java.util.List;
