@@ -31,9 +31,9 @@ public class Apartamento {
     private Usuario residente;
 
     // FK a Torre
-    // @ManyToOne
-    // @JoinColumn(name = "id_torre")
-    // private Torre torre;
+    @ManyToOne
+    @JoinColumn(name = "id_torre")
+    private Torre torre;
 
     @OneToMany(mappedBy = "apartamento")
     private List<Parqueadero> parqueaderos;
