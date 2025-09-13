@@ -6,22 +6,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "residentes")
+@Table(name = "roles")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Residente {
+public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idRol;
 
     private String nombre;
-    private String apellido;
-    private String documento;
-    private String telefono;
-    private String email;
-
-    @ManyToOne
-    @JoinColumn(name = "apartamento_id")
-    private Apartamento apartamento;
+    private String descripcion;
 }

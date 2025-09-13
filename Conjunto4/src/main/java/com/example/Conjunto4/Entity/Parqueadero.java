@@ -17,6 +17,7 @@ public class Parqueadero {
 
     private String numero;
     private String tipo;
+    private String estado;
 
     @ManyToOne
     @JoinColumn(name = "apartamento_id")

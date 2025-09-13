@@ -4,24 +4,27 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.util.List;
 
 @Entity
-@Table(name = "propietarios")
+@Table(name = "usuarios")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Propietario {
-    @Id
+
+public class Usuario {
+  @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idUsuario;
 
     private String nombre;
     private String apellido;
     private String documento;
     private String telefono;
     private String email;
+    private String contrasena;
+    private Boolean estado;
 
-    @OneToMany(mappedBy = "propietario")
-    private List<Apartamento> apartamentos;
+    @ManyToOne
+    @JoinColumn(name = "id_rol")
+    private Rol rol;
 }

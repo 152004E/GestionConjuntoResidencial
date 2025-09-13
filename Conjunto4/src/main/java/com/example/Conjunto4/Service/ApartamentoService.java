@@ -35,8 +35,7 @@ public class ApartamentoService {
             Apartamento apartamento = optionalApartamento.get();
             apartamento.setNumero(apartamentoDetails.getNumero());
             apartamento.setTorre(apartamentoDetails.getTorre());
-            apartamento.setPiso(apartamentoDetails.getPiso());
-            apartamento.setVisitantes(apartamentoDetails.getVisitantes());
+       
             apartamento.setParqueaderos(apartamentoDetails.getParqueaderos());
             apartamento.setCorrespondencias(apartamentoDetails.getCorrespondencias());
             return apartamentoRepository.save(apartamento);
