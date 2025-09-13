@@ -12,28 +12,23 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Apartamento {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_apartamento")
     private Long id;
 
     private String numero;
+    private String torre;
+    private int piso;
 
-    // FK al propietario (Usuario con rol = propietario)
     @ManyToOne
-    @JoinColumn(name = "id_propietario")
-    private Usuario propietario;
+    @JoinColumn(name = "propietario_id")
+    private Propietario propietario;
 
-    // FK al residente (Usuario con rol = residente)
-    @ManyToOne
-    @JoinColumn(name = "id_residente")
-    private Usuario residente;
+    @OneToMany(mappedBy = "apartamento")
+    private List<Residente> residentes;
 
-    // FK a Torre
-    @ManyToOne
-    @JoinColumn(name = "id_torre")
-    private Torre torre;
+    @OneToMany(mappedBy = "apartamento")
+    private List<Visitante> visitantes;
 
     @OneToMany(mappedBy = "apartamento")
     private List<Parqueadero> parqueaderos;

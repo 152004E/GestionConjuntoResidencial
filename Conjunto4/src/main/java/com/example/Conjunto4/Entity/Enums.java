@@ -12,6 +12,13 @@ public class Enums {
         Rechazada
     }
 
+    public enum SolicitudTipo {
+        Mantenimiento,
+        Queja,
+        Reclamacion,
+        Otro
+    }
+
     public enum VigilanteTurno {
         Mañana,
         Tarde,

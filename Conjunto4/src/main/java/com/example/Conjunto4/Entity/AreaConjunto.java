@@ -22,8 +22,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AreaConjunto {
 
+    // Atributos de la entidad AreaConjunto
+
+    // Identificador único id 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     // Nombre del área
