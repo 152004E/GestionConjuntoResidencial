@@ -56,7 +56,7 @@ public class Solicitud {
     // Relación con Apartamento
     @NotNull(message = "El apartamento no puede estar vacío")
     @ManyToOne
-    @JoinColumn(name = "apartamento_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "id_apartamento", referencedColumnName = "id_apartamento", nullable = false)
     private Apartamento apartamento;
 
     // Relación con AreaConjunto (opcional, solo si la solicitud es para reservar un área)
