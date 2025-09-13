@@ -1,10 +1,11 @@
 package com.example.Conjunto4.Entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.*; // ✅ Importa todas las anotaciones de JPA
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.util.List;
+
+import java.util.List; // ✅ Necesario para las listas
 
 @Entity
 @Table(name = "apartamentos")
@@ -12,23 +13,28 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Apartamento {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_apartamento")
     private Long id;
 
     private String numero;
-    private String torre;
-    private int piso;
 
+    // FK al propietario (Usuario con rol = propietario)
     @ManyToOne
-    @JoinColumn(name = "propietario_id")
-    private Propietario propietario;
+    @JoinColumn(name = "id_propietario")
+    private Usuario propietario;
 
-    @OneToMany(mappedBy = "apartamento")
-    private List<Residente> residentes;
+    // FK al residente (Usuario con rol = residente)
+    @ManyToOne
+    @JoinColumn(name = "id_residente")
+    private Usuario residente;
 
-    @OneToMany(mappedBy = "apartamento")
-    private List<Visitante> visitantes;
+    // FK a Torre
+    @ManyToOne
+    @JoinColumn(name = "id_torre")
+    private Torre torre;
 
     @OneToMany(mappedBy = "apartamento")
     private List<Parqueadero> parqueaderos;
