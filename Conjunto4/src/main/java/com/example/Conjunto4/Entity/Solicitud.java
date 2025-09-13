@@ -1,17 +1,7 @@
 package com.example.Conjunto4.Entity;
 
 import java.time.LocalDateTime;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -27,53 +17,50 @@ public class Solicitud {
 
     // Atributos de la entidad Solicitud
 
-    // Identificador único id
+    // Identificador único solicitud_id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "solicitud_id", nullable = false)
+    @Column(name = "solicitud_id")
     private Long id;
 
-    // Fecha y hora creación de la solicitud
+    // Fecha y hora de creación de la solicitud
     @NotNull(message = "La fecha y hora de la solicitud no puede estar vacía")
     @Column(name = "fecha_hora", nullable = false)
     private LocalDateTime fechaHoraCreacion = LocalDateTime.now();
 
-    //Descripción de la solicitud
+    // Descripción de la solicitud
     @NotBlank(message = "La descripción no puede estar vacía")
     @Column(name = "descripcion", nullable = false, length = 255)
     private String descripcion;
 
-    //Tipo de solicitud
+    // Tipode la solicitud
     @NotNull(message = "El tipo de solicitud no puede estar vacío")
     @Enumerated(EnumType.STRING)
-    @Column(name = "tipo_solicitud", nullable = false)
-    private Enums.SolicitudTipo tipoSolicitud;  // Mantenimiento, Queja, Reclamación, etc. (archivo Enums.java)
+    @Column(name = "tipo_solicitud", nullable = false, length = 50)
+    private Enums.SolicitudTipo tipoSolicitud;
 
-    //Estado de la solicitud
+    // Estado de la solicitud
     @NotNull(message = "El estado de la solicitud no puede estar vacío")
     @Enumerated(EnumType.STRING)
-    @Column(name = "estado_solicitud", nullable = false)
-    private Enums.SolicitudEstado estadoSolicitud;  // Pendiente, Aprobada, Rechazada (archivo Enums.java)
+    @Column(name = "estado_solicitud", nullable = false, length = 50)
+    private Enums.SolicitudEstado estadoSolicitud;
 
-    //Relaciones
+    // Relaciones
 
-    // Relación con Usuario (quien hace la solicitud)
+    // Relación con Usuario 
     @NotNull(message = "El usuario no puede estar vacío")
     @ManyToOne
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = false)
     private Usuario usuario;
 
     // Relación con Apartamento
     @NotNull(message = "El apartamento no puede estar vacío")
     @ManyToOne
-    @JoinColumn(name = "id_apartamento", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "apartamento_id", referencedColumnName = "id", nullable = false)
     private Apartamento apartamento;
 
-    // Relacion con AreaConjunto (solicitude de reserva de un área)
+    // Relación con AreaConjunto (opcional, solo si la solicitud es para reservar un área)
     @ManyToOne
     @JoinColumn(name = "area_conjunto_id", referencedColumnName = "id")
     private AreaConjunto areaConjunto;
-
-    
-
 }

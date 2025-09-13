@@ -1,9 +1,6 @@
 package com.example.Conjunto4.Service;
 
 import com.example.Conjunto4.Entity.Apartamento;
-import com.example.Conjunto4.Entity.Torre;
-import com.example.Conjunto4.Entity.Propietario;
-import com.example.Conjunto4.Entity.Residente;
 import com.example.Conjunto4.Repository.ApartamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,8 +36,6 @@ public class ApartamentoService {
             apartamento.setNumero(apartamentoDetails.getNumero());
             apartamento.setTorre(apartamentoDetails.getTorre());
             apartamento.setPiso(apartamentoDetails.getPiso());
-            apartamento.setPropietario(apartamentoDetails.getPropietario());
-            apartamento.setResidentes(apartamentoDetails.getResidentes());
             apartamento.setVisitantes(apartamentoDetails.getVisitantes());
             apartamento.setParqueaderos(apartamentoDetails.getParqueaderos());
             apartamento.setCorrespondencias(apartamentoDetails.getCorrespondencias());

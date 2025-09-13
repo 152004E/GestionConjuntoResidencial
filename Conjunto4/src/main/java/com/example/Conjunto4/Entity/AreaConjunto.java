@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -43,7 +44,7 @@ public class AreaConjunto {
 
     // Capacidad
     @NotNull(message = "La capacidad no puede estar vacía")
-    @Size(min = 1, message = "La capacidad mínima es 1")
+    @Min(value = 1, message = "La capacidad mínima es 1")
     @Column(name = "capacidad", nullable = false)
     private Integer capacidad;
 
