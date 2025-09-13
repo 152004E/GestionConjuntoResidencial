@@ -20,6 +20,6 @@ public class Parqueadero {
     private String estado;
 
     @ManyToOne
-    @JoinColumn(name = "apartamento_id")
+    @JoinColumn(name = "id_apartamento")
     private Apartamento apartamento;
 }
