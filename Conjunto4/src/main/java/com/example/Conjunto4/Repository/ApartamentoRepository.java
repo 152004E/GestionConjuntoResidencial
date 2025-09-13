@@ -4,6 +4,9 @@ import com.example.Conjunto4.Entity.Apartamento;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+
+ //Repositorio para la entidad Apartamento
 @Repository
 public interface ApartamentoRepository extends JpaRepository<Apartamento, Long> {
+    
 }
